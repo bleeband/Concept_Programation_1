@@ -329,10 +329,12 @@ condition3 = salaire >= 50000 or (diplome and experience >= 1)
 # Validation finale
 pret_approuve = condition1 and condition2 and condition3
 
+print(" ")
 print(f"Condition 1 respecté : {condition1}")
 print(f"Condition 2 respecté : {condition2}")
 print(f"Condition 3 respecté : {condition3}")
 print(f"Prêt approuvé : {pret_approuve}")
+print(" ")
 
 if pret_approuve:
     print(f"Félicitation {sexe} {nom}, votre prêt est approuvé")
