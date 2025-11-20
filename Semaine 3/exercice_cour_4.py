@@ -179,10 +179,12 @@ else:
 # else:
 #     print("Données invalides") """
 
+
 # ----------------------------------------------------------------------------------
 ## Exercice 3 : Opérateur match
 
-### Exercice 3.1 : Directions
+
+""" ### Exercice 3.1 : Directions
 
 # Écrivez un programme qui utilise match pour afficher la direction correspondante :
 
@@ -192,8 +194,25 @@ else:
 # - "w" : "Ouest"
 # - Autre : "Direction invalide"
 
+dir = (input(("Entrer la premiere lettre de votre direction (n,s,e,o) : ")))
 
-# ----------------------------------------------------------------------------------
+while dir != "q":
+
+    match dir:
+        case "n":
+            print("Nord")
+        case "s":
+            print("Sud")
+        case "e":
+            print("Est")
+        case "o":
+            print("Ouest")
+        case "_":
+            print("ouff vous êtes perdu!!!")
+    dir = (input(("Alors, vous allez ou? (n,s,e,o ou q) : "))) """
+
+
+""" # ----------------------------------------------------------------------------------
 ### Exercice 3.2 : Statut de commande
 
 # Créez un programme qui traite des statuts de commande avec match :
@@ -203,8 +222,26 @@ else:
 # - "livree" : "Votre commande a été livrée"
 # - "annulee" : "Votre commande a été annulée"
 
+statut = (input(("Entrer le code du statut : ")))
 
-# ----------------------------------------------------------------------------------
+while statut != "q":
+
+    match statut:
+        case 1:
+            print("en_attente" "\n" "Votre commande est en attente")
+        case 2:
+            print("expediee" "\n" "Votre commande a été expédiée")
+        case 3:
+            print("livree" "\n" "Votre commande a été livrée")
+        case 4:
+            print("annulee" "\n" "Votre commande a été annulée")
+        case _:
+            print("Veuillez communiquer avec l'admin")
+    
+    statut = (input(("Alors, quel est le code ? (q) : "))) """
+            
+
+""" # ----------------------------------------------------------------------------------
 ### Exercice 3.3 : Types de véhicules
 
 # Écrivez un programme qui affiche le type de véhicule :
@@ -214,31 +251,70 @@ else:
 # - "bateau" : "Véhicule maritime"
 # - "avion" : "Véhicule aérien"
 
+ty_veh = (input(("Entrer le vehicule a traduire : ")))
+
+while ty_veh != "q":
+
+    match ty_veh:
+        case "car":
+            print(f"{ty_veh} : voiture \nVehicule terrestre à 4 roues")
+        case "moto":
+            print(f"{ty_veh} : moto \nVehicule terrestre à 2 roues")
+        case "boat":
+            print(f"{ty_veh} : bateau \nVehicule maritime")
+        case "plane":
+            print(f"{ty_veh} : avion \nVehicule aerien")
+        case "quad":
+            print(f"{ty_veh} : v.t.t \nVehicule tout-terrain")
+        case _:
+            print(f"{ty_veh} : Ceci n'est pas un vehicule connu")
+    
+    ty_veh = (input(("Alors, vehicule a traduire ? (q) : "))) """
+
 
 # ----------------------------------------------------------------------------------
 ## Exercice 4 : Opérateur ternaire
 
-### Exercice 4.1 : Positif ou négatif
+""" ### Exercice 4.1 : Positif ou négatif
 
 # Utilisez l'opérateur ternaire pour déterminer si un nombre est positif ou négatif.
 
 
-# ----------------------------------------------------------------------------------
+nombre = int((input(("Entrer un nombre : "))))
+
+signe = "Positif" if nombre > 0 else "Negatif" if nombre < 0 else "zero"
+print(signe) """
+
+
+
+""" # ----------------------------------------------------------------------------------
 ### Exercice 4.2 : Majorité légale
 
 # Créez un programme qui affiche "majeur" ou "mineur" selon l'âge avec l'opérateur ternaire.
 
 
-# ----------------------------------------------------------------------------------
+age = int((input(("Entrer votre age : "))))
+
+valeur = "Mineur" if age < 18 else "Majeur"
+print(valeur) """
+
+
+""" # ----------------------------------------------------------------------------------
 ### Exercice 4.3 : Remise automatique
 
 # Écrivez un programme qui applique une remise de 20% si le prix est supérieur à 100$, sinon garde le prix original avec l'opérateur ternaire.
+
+prix_ori = float((input(("Entrer le prix indique : "))))
+rabais = 1 if prix_ori <= 100 else 0.2
+prix_final = prix_ori - (prix_ori * rabais)
+
+print(f"Votre total est de ${prix_final:,.2f}") """
 
 
 # ----------------------------------------------------------------------------------
 ## Exercice 5 : Combinaisons
 
-### Exercice 5.1 : Système d'authentification
+""" ### Exercice 5.1 : Système d'authentification
 
 # Créez un programme qui vérifie :
 
@@ -246,25 +322,49 @@ else:
 # - Mot de passe d'au moins 6 caractères
 # - L'utilisateur n'est pas bloqué
 
+user = str(input(("Entrer votre username : ")))
 
-# ----------------------------------------------------------------------------------
+if len(user) <= 0:
+    print("votre usager doit contenir un minimum de caractere")
+else:
+    passw = str(input(("Entrer votre password : ")))
+    if len(passw) <= 5:
+        print("entrer un minimum de 6 caractere")
+    else:
+        print("vous etes admis") """
+
+
+""" # ----------------------------------------------------------------------------------
 ### Exercice 5.2 : Calculateur de catégorie sportive
 
 # Écrivez un programme qui détermine la catégorie sportive selon l'âge :
 
-# - "Poussin" : 6-7 ans
-# - "Benjamin" : 8-9 ans
-# - "Minime" : 10-11 ans
-# - "Cadet" : 12-15 ans
-# - "Junior" : 16-17 ans
-# - "Senior" : 18-39 ans
-# - "Vétéran" : 40 ans et plus
+age = int((input(("Entrer votre age : "))))
+
+if 6 <= age <= 7:
+    categorie = "Poussin"
+elif 8 <= age <= 9:
+    categorie = "Benjamin"
+elif 10 <= age <= 11:
+    categorie = "Minime"
+elif 12 <= age <= 15:
+    categorie = "Cadet"
+elif 16 <= age <= 17:
+    categorie = "Junior"
+elif 18 <= age <= 39:
+    categorie = "Senior"
+elif age >= 40:
+    categorie = "Veteran"
+else:
+    categorie = "Trop jeune"
+
+print(f"Tu as {age} ans, dans la categorie : {categorie}")
+ """
 
 
 
-
-
-
+# ----------------------------------------------------------------------------------
+# ----------------------------------------------------------------------------------
 # ----------------------------------------------------------------------------------
 
 # Solutions
@@ -401,8 +501,11 @@ else:
 
 # prix_final = prix_original * 0.8 if prix_original > 100 else prix_original
 # print(f"Prix final : {prix_final}$")
+
+
 # Solution Exercice 5
 # 5.1 : Système d'authentification
+
 # username = "john_doe"
 # password = "secret123"
 # user_blocked = False
@@ -422,7 +525,9 @@ else:
 #     if not password_ok:
 #         print("- Le mot de passe doit avoir au moins 6 caractères")
 #     if user_blocked:
-#         print("- L'utilisateur est bloqué")
+#         print("- L'utilisateur est bloqué")`
+
+
 # 5.2 : Calculateur de catégorie sportive
 # age = 14
 
