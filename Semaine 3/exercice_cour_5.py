@@ -43,11 +43,11 @@ print(x)
 print(list(x)) """
 
 
-# ----------------------------------------------------------------------------------
+""" # ----------------------------------------------------------------------------------
 # Exercice 2.2 : Table de multiplication
 # Créez un programme qui affiche la table de multiplication d'un nombre donné de 1 à 10.
 
-""" x = int(input("entrer votre chiffre :"))
+x = int(input("entrer votre chiffre :"))
 multi = x
 
 # for multi in range(1, 11):
@@ -55,8 +55,8 @@ multi = x
 
 for i in range(1, 11):
     table = x * i
-    print(f"{multi} x {i} = {table}")
- """
+    print(f"{multi} x {i} = {table}") """
+
 
 """ # ----------------------------------------------------------------------------------
 # Exercice 2.3 : Compte à rebours
@@ -139,11 +139,19 @@ while y != x:
 print("Félicitations !") """
 
 
-# ----------------------------------------------------------------------------------
+""" # ----------------------------------------------------------------------------------
 # Exercice 4.3 : Calcul de factorielle
 # Créez un programme qui calcule la factorielle d'un nombre en utilisant while.
 
+starting_number = int(input("entrer un nombre ? "))
+number = starting_number
+total = 1
 
+while number > 1:
+    total *= number  # multiplie le total par le nombre (5, puis 4, puis 3...)
+    number -= 1  # réduit le nombre de un
+
+print('{}! est égal à {}'.format(starting_number, total)) """
 
 # ----------------------------------------------------------------------------------
 # Exercice 5 : Instructions break, continue et pass
@@ -151,19 +159,36 @@ print("Félicitations !") """
 # Exercice 5.1 : Recherche avec break
 # Écrivez un programme qui cherche un nombre dans une liste et s'arrête dès qu'il le trouve.
 
+""" liste = [1,2,3,4,5]
+
+for x in liste:
+    print(x)
+    if x > 3:
+        break """
 
 
 # ----------------------------------------------------------------------------------
 # Exercice 5.2 : Filtrage avec continue
 # Créez un programme qui affiche seulement les nombres positifs d'une liste en utilisant continue.
 
+""" for x in range(0, 11):
+    if x % 2 == 1:
+        continue
+    print(f"la valeur de x est {x}") """
 
-
-# ----------------------------------------------------------------------------------
+""" # ----------------------------------------------------------------------------------
 # Exercice 5.3 : Structure avec pass
 # Écrivez un programme qui utilise pass comme placeholder pour une condition à implémenter plus tard.
 
+nombres = [1, 2, 3, 4, 5]
 
+for nombre in nombres:
+    if nombre % 2 == 0:
+        # À implémenter : traitement des nombres pairs
+        #print(f"nombre pairs sont {nombre}")
+        pass
+    else:
+        print(f"nombre impair sont {nombre}") """
 
 # ----------------------------------------------------------------------------------
 # Exercice 6 : Combinaisons
@@ -171,19 +196,81 @@ print("Félicitations !") """
 # Exercice 6.1 : Statistiques d'une liste
 # Créez un programme qui calcule le minimum, maximum et moyenne d'une liste de nombres.
 
+""" note = [68, 78, 65, 81, 72]
+
+print(note)
+print(sum(note) / len(note))
+print(min(note))
+print(max(note))
+print()
+
+if note:
+    minimum = note[0]
+    maximum = note[0]
+    somme = 0
+
+    for nombre in note:
+        if nombre < minimum:
+            minimum = nombre
+        if nombre > maximum:
+            maximum = nombre
+        somme += nombre
+
+    moyenne = somme / len(note)
+
+    print(f"Minimum : {minimum}")
+    print(f"Maximum : {maximum}")
+    print(f"Moyenne : {moyenne:.2f}")
+else:
+    print("La liste est vide") """
+
 
 
 # ----------------------------------------------------------------------------------
 # Exercice 6.2 : Palindrome
 # Écrivez un programme qui vérifie si un mot est un palindrome.
 
+""" def palindrome(texte):
+  # 1. Nettoyer le texte : retirer les espaces et mettre en minuscules
+  texte_nettoye = "".join(texte.split()).lower()
 
+  # 2. Inverser le texte nettoyé
+  texte_inverse = texte_nettoye[::-1]
+
+  # 3. Comparer les deux chaînes
+  return texte_nettoye == texte_inverse
+
+# Exemple d'utilisation
+print(palindrome("la mariee ira mal"))
+print(palindrome("Bonjour"))
+print(palindrome("1 2 3 2 1")) """
 
 # ----------------------------------------------------------------------------------
 # Exercice 6.3 : Jeu de devinette amélioré
 # Créez un jeu de devinette avec limite d'essais et indices.
 
+""" atrouver = 50
+essais_max = 5
+essais = 0
 
+while essais < essais_max:
+    essai = int(input("entrer un nombre :"))
+    essais += 1
+
+    if essai == atrouver:
+        print(f"Bravo ! Trouvé en {essais} essai(s)")
+        break
+    elif essai < atrouver:
+        print("Trop petit")
+    else:
+        print("Trop grand")
+
+    if abs(essai - atrouver) <= 5:
+        print("Vous êtes très proche !")
+
+    print(f"Il vous reste {essais_max - essais} essai(s)")
+else:
+    print(f"Perdu ! Le nombre était {atrouver}") """
 
 
 
@@ -268,16 +355,16 @@ print("Félicitations !") """
 #         print("Erreur : entrez un nombre entre 1 et 10")
 #         nombre = 0  # Pour continuer la boucle
 # 4.2 : Devinette de nombre
-# nombre_secret = 42
+# atrouver = 42
 # essai = 0
 # trouve = False
 
 # while not trouve:
 #     essai = 25  # Simulation d'une saisie
-#     if essai == nombre_secret:
+#     if essai == atrouver:
 #         print("Bravo ! Vous avez trouvé le nombre secret.")
 #         trouve = True
-#     elif essai < nombre_secret:
+#     elif essai < atrouver:
 #         print("Trop petit, essayez encore.")
 #     else:
 #         print("Trop grand, essayez encore.")
@@ -342,7 +429,10 @@ print("Félicitations !") """
 #     print(f"Moyenne : {moyenne:.2f}")
 # else:
 #     print("La liste est vide")
+
+
 # 6.2 : Palindrome
+
 # mot = "radar"
 # est_palindrome = True
 
@@ -355,8 +445,10 @@ print("Félicitations !") """
 #     print(f"'{mot}' est un palindrome")
 # else:
 #     print(f"'{mot}' n'est pas un palindrome")
+
+
 # 6.3 : Jeu de devinette amélioré
-# nombre_secret = 50
+# atrouver = 50
 # essais_max = 5
 # essais = 0
 
@@ -364,17 +456,17 @@ print("Félicitations !") """
 #     essai = 30  # Simulation d'une saisie
 #     essais += 1
 
-#     if essai == nombre_secret:
+#     if essai == atrouver:
 #         print(f"Bravo ! Trouvé en {essais} essai(s)")
 #         break
-#     elif essai < nombre_secret:
+#     elif essai < atrouver:
 #         print("Trop petit")
 #     else:
 #         print("Trop grand")
 
-#     if abs(essai - nombre_secret) <= 5:
+#     if abs(essai - atrouver) <= 5:
 #         print("Vous êtes très proche !")
 
 #     print(f"Il vous reste {essais_max - essais} essai(s)")
 # else:
-#     print(f"Perdu ! Le nombre était {nombre_secret}")
+#     print(f"Perdu ! Le nombre était {atrouver}")
