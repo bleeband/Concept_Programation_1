@@ -1,7 +1,7 @@
 import copy
 
 #--------------------------------
-#   LISTE
+#   LISTE  []
 
 # a = [1, 2 , "hello", 1.2, [1, 2], True]
 # b = list("hello")

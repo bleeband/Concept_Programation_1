@@ -1,5 +1,6 @@
 import copy
-# LES DICTIONNAIRES
+
+# LES DICTIONNAIRES  {}
 #-----------------------------------------
 
 une_liste = [1, 2]
@@ -47,7 +48,8 @@ un_dict = {
 # print(un_etudiant)
 # print(un_dict)
 
-# ===  OPERATEUR IN et les METHODES GET, COPY et CLEAR ===
+
+# ============  OPERATEUR IN et les METHODES GET, COPY et CLEAR =========
 
 # for item in un_dict:
 #     print(item)
@@ -95,7 +97,8 @@ un_dict = {
 # else:
 #     print("non existant")
 
-#  === COPY ===
+
+#  =============== COPY =======================
 
 # un_dict2 = un_dict      #SHALOW COPY
 # un_dict2["prenom"] = "julien"
@@ -111,56 +114,44 @@ un_dict = {
 
 # un_dict2 = copy.deepcopy(un_dict)
 
-# un_dict2["adresse"]["ville"] = "Quebec"
-# print(un_dict["adresse"]["ville"])
-# print(un_dict2["adresse"]["ville"])
+# un_dict2['adress']['ville'] = 'Québec'
+# # print('95', un_dict['adress']['ville'])
+# # print('96', un_dict2['adress']['ville'])
 
-#  === SUPRIMER DES ELEMENT DU DICTIONNAIRE ===
 
-# result = un_dict.pop(True)
+# # ----- Supprimer les élèments d'un dictionnaire  ---------------
 
-# print(result)
-# print(un_dict)
-# print()
+# # result = un_dict.pop(True)
 
-# result1 = un_dict.popitem()
-# print(result1)
-# print(un_dict)
+# # print(result)
+# # print(un_dict)
 
-# print()
 # cle, valeur = un_dict.popitem()
-# print(cle, valeur)
+# # print(cle, valeur)
+# # print(un_dict)
+
+
+# # ------------ La méthode update ----------------------
+
+# # un_dict.update({'age': [0, 1]})
+# # print(un_dict)
+
+# # un_dict['age'] = 35
+# # print(un_dict)
+
+# # un_dict.update({'status': 'inscrit'})
+# # print(un_dict)
+
+# un_dict.setdefault('presence', False)
+# un_dict.update({'presence': True})
 # print(un_dict)
 
-# print()
+# nouvelle_note = 65
+# if 'notes' in un_dict: 
+#     un_dict['notes'].append(nouvelle_note)
+# else:
+#     un_dict['notes'] = [nouvelle_note]
 
-#  === METHODE UPDATE ===
-
-# un_dict.update({"age": 27})
-# print(un_dict)
-# print()
-
-# un_dict["age"] = 35
-# print(un_dict)
-# print()
-
-# un_dict.update({"statut": "inscrit"})
-# print(un_dict)
-# print()
-
-# un_dict.setdefault("presence", False)
-# un_dict.update({"presence": True})
-# print(un_dict)
-
-#  === APPEND ===
-
-nouvelle_note = 65
-
-if 'notes' in un_dict: 
-    un_dict['notes'].append(nouvelle_note)
-else:
-    un_dict['notes'] = [nouvelle_note]
-
-un_dict.setdefault('notes', [])
-un_dict['notes'].append(nouvelle_note)
+# un_dict.setdefault('notes', [])
+# un_dict['notes'].append(nouvelle_note)
 

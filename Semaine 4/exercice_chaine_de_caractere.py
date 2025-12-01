@@ -349,7 +349,7 @@ for id in identifiants:
 # 7.1 : Système de génération d'email
 # Créez un générateur d'emails professionnels.
 
-# Données des employés
+""" # Données des employés
 employes = [
     {"prenom": "jean", "nom": "dupont", "departement": "IT"},
     {"prenom": "marie", "nom": "martin", "departement": "RH"},
@@ -368,7 +368,7 @@ for emp in employes:
     # Formatage du nom complet
     nom_complet = f"{prenom.title()} {nom.upper()}"
 
-    print(f"  {nom_complet} ({dept.upper()}) -> {email}")
+    print(f"  {nom_complet} ({dept.upper()}) -> {email}") """
 
 
 

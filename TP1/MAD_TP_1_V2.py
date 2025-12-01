@@ -4,26 +4,27 @@
 # DECLARATION DES VARIABLES
 hp = "Harry Potter"
 choix_inv = "Choix invalide, veuillez recommencer"
-short = "---------------------------------------"
-long = "----------------------------------------------------------------------------------------------------"
-menu1 = f"MENU  -->  1.  Afficher la bibliothèque  2.  Rechercher un titre de livre   3.  Vérifier le statut\n      -->  4.  Gestion des livres   5.  Statistique  6.  Gestion de la bibliothèque  Q.  Quitter"
+choix_menu = "\nVeuillez faire un choix parmi le menu : "
+short = "--------------------------------------------"
+long = "----------------------------------------------------------------------------------------------------------"
+menu1 = f"   MENU      -->  1.  Afficher la bibliothèque  2.  Rechercher un titre de livre   3.  Vérifier le statut\nPRINCIPAL    -->  4.  Gestion des livres   5.  Statistique  6.  Gestion de la bibliothèque  Q.  Quitter"
 menu2 = "RECHERCHE -->  1. Par titre  2. Par auteur  R.  Retour au menu principal"
 menu3 = "STATUT -->  1. Disponible  2. Emprunté  R.  Retour au menu principal"
 menu4 = "GESTION LIVRE -->  1.  Emprunt  2.  Retour  R.  Retour au menu principal"
-menu5 = "STATISTIQUE -->  1.  Top 3  2.  Disponibilité  3.  + emprunté  R.  Retour au menu principal"
+menu5 = "STATISTIQUE -->  1.  Rapport blibliothèque  2.  Top 3  3.  Statistiques générales   R.  Retour au menu principal"
 menu6 = "GESTION BIBLIO -->  1.  Ajout d'un livre  2.  Retrait d'un livre  R.  Retour au menu principal"
 
 biblio = [
     {"titre": f"{hp} 1 : L'École des soriers", "auteur": "JK Rowling", "statut": "disponible", "note": "4", "client": ""},
     {"titre": f"{hp} 2 : La chambre des secrets", "auteur": "JK Rowling", "statut": "disponible", "note": "4", "client": ""},
-    {"titre": f"{hp} 3 : Le Prisonnier d'Azkaban", "auteur": "JK Rowling", "statut": "emprunté", "note": "3", "client": ""},
+    {"titre": f"{hp} 3 : Le Prisonnier d'Azkaban", "auteur": "JK Rowling", "statut": "emprunté", "note": "3", "client": "test"},
     {"titre": f"{hp} 4 : La coupe de feu", "auteur": "JK Rowling", "statut": "disponible", "note": "5", "client": ""},
     {"titre": f"{hp} 5 : L'ordre du Phénix", "auteur": "JK Rowling", "statut": "disponible", "note": "4", "client": ""},
     {"titre": f"{hp} 6 : Le prince de sang-mêlé", "auteur": "JK Rowling", "statut": "disponible", "note": "3", "client": ""},
     {"titre": f"{hp} et Les reliques de la mort", "auteur": "JK Rowling", "statut": "disponible", "note": "4", "client": ""},
-    {"titre": "1984", "auteur": "George Orwell", "statut": "emprunté", "note": "2", "client": ""},
-    {"titre": "La Moufette qui pet", "auteur": "Richard Petit", "statut": "emprunté", "note": "3", "client": ""},
-    {"titre": "Le lutin cretin", "auteur": "Richard Petit", "statut": "emprunté", "note": "3", "client": ""},
+    {"titre": "1984", "auteur": "George Orwell", "statut": "emprunté", "note": "2", "client": "Marc"},
+    {"titre": "La Moufette qui pet", "auteur": "Richard Petit", "statut": "emprunté", "note": "3", "client": "123"},
+    {"titre": "Le lutin cretin", "auteur": "Richard Petit", "statut": "emprunté", "note": "3", "client": "123"},
     {"titre": "2020 l'odysee de l'espace", "auteur": "Jules Vernes", "statut": "disponible", "note": "4", "client": ""},
     {"titre": "Le code civil du quebec", "auteur": "Badoin, Renaud", "statut": "disponible", "note": "1", "client": ""},
 ]
@@ -33,28 +34,29 @@ print(f"\n{long}")
 client_iden = input("Bonjour ! pour débuter, veuillez vous identifier : ")
 client = client_iden
 print(f"\n{long}")
-print(f"==== Bienvenue dans ma bibliothèque personnelle, {client.upper()} ====")
-quitter = f"\n{long}\nMerci {client.upper()}, à la prochaine ! Au plaisir de vous revoir bientôt"
+print(f"      Bienvenue dans ma bibliothèque personnelle, {client.upper()}")
 
+# MESSAGE LORSQUE LE CLIENT QUITTE
+quitter = f"\n{long}\nMerci {client.upper()}, à la prochaine ! Au plaisir de vous revoir bientôt !!!"
 
 while True:
-    print(f"\n{long}")
-    print(f"{menu1}\n")
-    choix = input("Veuillez faire un choix parmi le menu : \n")
+    print(f"{long}")
+    print(f"{menu1}")
+    choix = input(choix_menu)
 
     # AFFICHER LA BIBLIOTHEQUE
     if choix == "1":
-        print("\n{short}\n==== Voici le contenu de ma biblio ====\n")
+        print(f"{short}\n==== Voici le contenu de ma biblio ====\n")
         for livre in list(biblio):
-                print("•", livre["titre"], "de", livre["auteur"])
-        print()
+                print("•", livre["titre"], "écrit par", livre["auteur"])
 
     # RECHERCHE PERSONNALISÉ DANS LA BIBLIOTHEQUE
     elif choix == "2":
-        print(f"\n{short}\n{menu2}\n")
-
         while True:
-            choix_recherche = input("Veuillez faire votre choix : ")
+            print(f"{long}")
+            print(f"{menu2}")
+            choix_recherche = input(choix_menu)
+
             # RECHERCHE PAR TITRE
             if choix_recherche == "1":
                 print(f"\n{short}\nEffectuer une recherche par titre")
@@ -62,60 +64,55 @@ while True:
                 print(f"\nVoici le résultat de la recherche contenent: {rech_titre.upper()} \n")
                 for livre in list(biblio):
                     if rech_titre in livre["titre"].lower():
-                        print("•", livre["titre"], "de", livre["auteur"])
+                        print("•", livre["titre"], "écrit par", livre["auteur"])           
 
             # RECHERCHE PAR NOM D'AUTEUR
             elif choix_recherche == "2":
                 print(f"\n{short}\nEffectuer une recherche par nom d'auteur")
                 rech_auteur = input(f"\n{client.upper()}, quelle auteur recherchez-vous : ").lower()
-                print(f"\nVoici le résultat de la recherche contenent: {rech_auteur.upper()} \n")
+                print(f"{short}\nVoici le résultat de la recherche contenent: {rech_auteur.upper()} \n")
                 for livre in list(biblio):
                     if rech_auteur in livre["auteur"].lower():
-                        print("•", livre["titre"], "de", livre["auteur"])
+                        print("•", livre["titre"], "écrit par", livre["auteur"],)      
 
             elif choix_recherche.lower == "r" or "R":
-                print(f"\nRetour au menu principal")
-                print(f"\n{menu1}\n")
                 break
             elif choix_gestB.lower == "q" or "Q":
                 print(quitter)
                 break                
             else:
                 print(f"\n{choix_inv} + {client.upper()}")
-                print(f"\n{menu3}\n")
+                print(f"\n{menu2}\n")
         print()
 
     # AFFICHER LA DISPONIBILITE DES LIVRES
     elif choix == "3":
-
-        print(f"\n{short}\nVérifitacion de la disponibilité")
-        print(f"\n{menu3}")
-
         while True:
+            print(f"{long}")    
+            print(f"\n{menu3}")
+
             choix_statut = input("\nVeuillez faire votre choix : ")
             if choix_statut == "1":
                 livres_dispo = [livre for livre in biblio if livre["statut"] == "disponible"]
                 nb_dispo = len(livres_dispo)
                 livres_disponibles = nb_dispo
-                print(f"Nombre de livres disponible présentement : {livres_disponibles}\n")
+                print(f"{short}\nNombre de livres disponible présentement : {livres_disponibles}\n")
                 for livre in biblio:
                     if livre["statut"].lower() == "disponible":
-                        print("•", livre["titre"], "de", livre["auteur"])
+                        print("•", livre["titre"], "écrit par", livre["auteur"])
                 break
 
             elif choix_statut == "2":
                 livres_empr = [livre for livre in biblio if livre["statut"] == "emprunté"]
                 nb_empr = len(livres_empr)
                 livres_emprunté = nb_empr
-                print(f"Nombre de livres emprunté présentement : {livres_emprunté}\n")
+                print(f"{short}\nNombre de livres emprunté présentement : {livres_emprunté}\n")
                 for livre in biblio:
                     if livre["statut"].lower() == "emprunté":
-                        print("•", livre["titre"], "de", livre["auteur"],)
+                        print("•", livre["titre"], "écrit par", livre["auteur"],)
                 break
 
             elif choix_statut.lower == "r" or "R":
-                print(f"\nRetour au menu principal")
-                print(f"\n{menu1}\n")
                 break
 
             elif choix_gestB.lower == "q" or "Q":
@@ -126,76 +123,126 @@ while True:
                 print(f"\n{choix_inv} + {client.upper()}")
                 print(f"\n{menu3}\n")
     
-    # GESTION DES EMRUNT ET RETOUR
+    # GESTION DES EMPRUNT ET RETOUR
     elif choix == "4":
-        print("\n{short}\nGestion des EMPRUNT et RETOUR")
-        print(f"\n{menu4}\n")
-
         while True:
-            choix_gestL = input("Veuillez faire votre choix : ")
+            print(f"{long}")    
+            print(f"{menu4}")
+            choix_gestL = input(choix_menu)
 
             if choix_gestL == "1":
-                print(f"\n{long}\n")
-                livre_a_emprunter = input(f"{client.upper()}, quelle titre voulez-vous emprunter : ").lower()
-                print(f"\nEMPRUNT DU LIVRE {livre_a_emprunter.title()}\n")
-                livre_trouve = False 
+                # COMPTER LES EMPRUNTS ACTUELS
+                nb_emprunts = 0
                 for livre in biblio:
-                    if livre["titre"].lower() == livre_a_emprunter:
-                        livre_trouve = True
-                        if livre["statut"] == "disponible":
-                            livre["statut"] = "emprunté"
-                            livre["client"] = client
-                            print(f"{client.upper}, vous avez emprunté {livre['titre'].title()}\n")
+                    # On regarde si le livre est emprunté par CE client précis
+                    if livre["client"].lower() == client.lower():
+                        nb_emprunts += 1
                         
-                        elif livre["statut"] == "emprunté":
-                            print(f"Le livre {"titre".upper()} n'est pas disponible\n")
-                        break 
-                if not livre_trouve:
-                    print(f"Le livre {livre_a_emprunter.upper()} n'est pas disponible dans la bibliothèque\n")
+                # VÉRIFIER LA LIMITE
+                if nb_emprunts >= 2:
+                    print(f"{long}\nDésolé {client.upper()}, vous avez déjà {nb_emprunts} livres en votre possession.  La limite est de 2 livres")
+                    print("Veuillez retourné un livre avant de pouvoir refaire un emprunt")
+                
+                else:
+                    print(f"{long}\n")
+                    livre_a_emprunter = input(f"{client.upper()}, quelle titre voulez-vous emprunter : ").lower()
+                    print(f"\nEMPRUNT DU LIVRE {livre_a_emprunter}\n")
+                    livre_trouve = False
+
+                    for livre in biblio:
+                        if livre["titre"].lower() == livre_a_emprunter:
+                            livre_trouve = True
+                            if livre["statut"] == "disponible":
+                                livre["statut"] = "emprunté"
+                                livre["client"] = client
+                                print(f"{short}\n{client.upper()}, vous avez emprunté {livre['titre'].upper()}\n")
+                            
+                            elif livre["statut"] == "emprunté":
+                                print(f"{short}\nLe livre {livre['titre'].upper()} n'est pas disponible pour le moment")
+                            break 
+                    if not livre_trouve:
+                        print(f"{short}\nLe livre {livre['titre'].upper()} n'est pas disponible dans ma bibliothèque")
 
             elif choix_gestL == "2":
-                print(f"{long}\n")
-                livre_a_retourner = input(f"\n{client.upper()}, quelle titre voulez-vous retourner : ").lower()
-                print(f"\nRETOUR DU LIVRE {livre_a_retourner.title()}\n")
-                livre_trouve = False 
                 for livre in biblio:
-                    if livre["titre"].lower() == livre_a_retourner:
+                    if livre["statut"].lower() == "emprunté":
+                        print("•", livre["titre"], "écrit par", livre["auteur"],)
+                print(f"\n{short}")
+                livre_a_retourner = input(f"\n{client.upper()}, quelle titre voulez-vous retourner : ").lower()
+                nouvelle_note = input(f"Veuillez noter votre livre sur une note de 1 à 5 étoiles")
+                print(f"\nRETOUR DU LIVRE {livre_a_retourner.title()}\n")
+                livre_trouve = True 
+
+                for livre in biblio:
+                    if livre["titre"].lower() == livre_a_retourner.lower():
                         livre_trouve = True
                         if livre["statut"] == "emprunté":
                             livre["statut"] = "disponible"
                             livre["client"] = ""
-                            print(f"{client.upper}, vous avez emprunté {livre['titre'].title()}\n")
-                        
-                        elif livre["statut"] == "emprunté":
-                            print(f"Le livre {"titre".upper()} n'est pas disponible\n")
+                            livre["note"] = int(nouvelle_note)
+                            print(f"{short}\n{client.upper()}, vous avez retourné et noter {livre['titre'].title()}")
+                            
+                        elif livre["statut"] == "disponible":
+                            print(f"{short}\nLe livre {livre['titre'].title()} n'est pas disponible\n")
                         break 
+
                 if not livre_trouve:
-                    print(f"Le livre {livre_a_retourner.upper()} n'est pas disponible dans la bibliothèque\n")
+                    print(f"{short}\nLe livre {livre_a_retourner.upper()} n'est pas disponible dans ma bibliothèque\n")
 
             elif choix_gestL.lower == "r" or "R":
-                print(f"\nRetour au menu principal")
-                print(f"\n{menu1}\n")
                 break
 
             elif choix_gestB.lower == "q" or "Q":
                 print(quitter)
+                break
                 break  
 
             else:
                 print(f"\n{choix_inv} + {client.upper()}")
                 print(f"\n{menu4}\n")
 
-    # STATISTIQUE
+    # STATISTIQUE ET RAPPORT
     elif choix == "5":
-        print("\n{short}\nStatistique et rapport")
-        print(f"\n{menu5}\n")
         while True:
-            choix_stats = input("Veuillez faire votre choix : ")
+            print(f"{long}")    
+            print(f"\n{menu5}")
+
+            choix_stats = input(choix_menu)
             
             if choix_stats == "1":
-                pass
+                print(f"{short}\nRapport de la bibliothèque\n")
+                for numero, livre in enumerate(biblio, 1):
+                    print(f"{numero}. {livre['titre'].title()} écrit par {livre['auteur'].title()} | STATUT : {livre['statut']} | NOTE : {livre['note']} | CLIENT : {livre['client']}")
+            
             elif choix_stats == "2":
-                pass
+                print(f"{short}\nTOP 3 des livres les mieux notés\n")
+                decroissant = ("note")
+                biblio.sort(key=lambda x: x['note'], reverse=decroissant)
+                for numero, livre in enumerate(biblio[:3], 1):
+                    print(f"{numero}. {livre['titre'].title()} écrit par {livre['auteur'].title()} | NOTE : {livre['note']}/5")
+            
+            elif choix_stats == "3":
+                print(f"{short}\nStatistique générales\n")
+                nb_total = len(biblio)
+                nb_empruntes = 0
+                nb_disponibles = 0
+                somme_notes = 0
+                for livre in biblio:
+                    if livre["statut"] == "emprunté":
+                        nb_empruntes += 1
+                    else:
+                        nb_disponibles += 1
+                    somme_notes += int(livre["note"])
+                if nb_total > 0:
+                    moyenne = somme_notes / nb_total
+                else:
+                    moyenne = 0
+
+                print(f"1. Nombre total de livres : {nb_total}")
+                print(f"2. Livres disponibles     : {nb_disponibles}")
+                print(f"3. Livres empruntés       : {nb_empruntes}")
+                print(f"4. Note moyenne globale   : {moyenne:.1f}/5")
+
             elif choix_stats.lower == "r" or "R":
                 print(f"\nRetour au menu principal")
                 print(f"\n{menu1}\n")
@@ -210,10 +257,10 @@ while True:
     # AJOUTER UN LIVRE DANS LA BIBLIOTHEQUE
     #{"titre": "  ", "auteur": "  ", "statut": "  ", "note": "  ", "client": "  "}
     elif choix == "6":
-        print("\n{short}\nGestion de la bibliothèque\n")
-        print(f"\n{menu6}\n")
         while True:
-            choix_gestB = input("Veuillez faire votre choix : ")
+            print(f"{long}") 
+            print(f"\n{menu6}")
+            choix_gestB = input(choix_menu)
 
             if choix_gestB == "1":
                 ajout_titre = input(f"\n{client.upper()}, quelle titre voulez-vous ajouter à la biliothèque : ").lower()
@@ -226,8 +273,9 @@ while True:
                     "client": ""
                 }
                 biblio.append(nouveau_livre)
-
                 print(f"\n{short}\nVotre nouveau livre {ajout_titre.title()} a été ajouté\n{short}\n")
+                for livre in list(biblio):
+                    print("•", livre["titre"], "écrit par", livre["auteur"]," | ", "STATUT :", livre["statut"]," | ", "NOTE : ", livre["note"]," | ", "CLIENT : ", livre["client"])
 
             elif choix_gestB == "2":
                 while True:
@@ -251,10 +299,22 @@ while True:
                             print(f"Le titre que vous recherchez est introuvable. Voulez-vous dire {suggestion.upper()} ?")
                         else:
                             print(f"Erreur : Le livre '{retrait_titre.upper()}' n'a pas été trouvé ni aucun titre ressemblant.")
+            
+            elif choix_gestB == "0":
+                    print(f"{long}\nEffectuer un classement par : titre, auteur, statut, note ou client\n")
+                    choix_tri = input(f"{client.upper()}, comment voulez-vous classer la bibliothèque ? ").lower()
+                    cle_dispo = ["titre", "auteur", "statut", "note", "client"]
+
+                    if choix_tri in cle_dispo:
+                        decroissant = (choix_tri == "note")
+                        biblio.sort(key=lambda x: x[choix_tri], reverse=decroissant)
+                        print(f"{short}\nClassement par {choix_tri.upper()}\n")
+                        for livre in biblio:
+                                print("•", livre["titre"], "écrit par", livre["auteur"]," | ", "STATUT :", livre["statut"]," | ", "NOTE : ", livre["note"]," | ", "CLIENT : ", livre["client"])
+                    else:
+                        print(choix_inv)
 
             elif choix_gestB.lower == "r" or "R":
-                print(f"\nRetour au menu principal")
-                print(f"\n{menu1}\n")
                 break
             elif choix_gestB.lower == "q" or "Q":
                 print(quitter)
@@ -262,6 +322,7 @@ while True:
             else:
                 print(f"\n{choix_inv} + {client.upper()}")
                 print(f"\n{menu6}\n")
+
 
     # QUITTER
     elif choix.lower == "q" or "Q":
