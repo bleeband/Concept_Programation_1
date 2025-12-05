@@ -54,8 +54,7 @@
 # print("Salut", "Marc", end=" ")
 # print("test")
 
-
-a = "Je suis A"
+# a = "Je suis A"
 
 # def my_fonc(b):
 #     b = 2
@@ -81,12 +80,11 @@ a = "Je suis A"
 # my_fonc_muable2(d)
 
 
-
-# #      **  PASSER UN NOMBRE INDEFINI D'ARGUMENTS  **
+#      **  PASSER UN NOMBRE INDEFINI D'ARGUMENTS  **
 
 def somme_de_tout(*args, factor = "4", **kwargs):
-    print(kwargs)
-    print(factor)
+    print(f"je suis kwargs {kwargs}")
+    print(f"je suis factor {f"je suis le b de foo {factor}"}")
     print(sum(args))
 
 somme_de_tout(5,47,54,78, name="dufour", prenom="marc")
