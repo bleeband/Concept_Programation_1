@@ -1,3 +1,3 @@
 #  CALCULATRICE PYTHON
 
-print("je suis nouveau")
+print("je suis nouveaux")
