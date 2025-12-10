@@ -1,4 +1,4 @@
-COUR SUR GIT
+*** COUR SUR GIT ***
 
 # Configurer votre identité
 $ git config --global user.name "Votre Nom"
@@ -19,7 +19,6 @@ Ajouter un fichier
 
 $ git add .
 Ajouter tous les fichiers
-
 
 $ git commit -m "message"
 Créer un commit
@@ -50,14 +49,12 @@ $ git commit -m "feat: structure initiale"
 
 """Module principal du projet."""
 
-def
-main():
-"""Point d'entrée du programme."""
-print("Bienvenue!")
+def main():
+    """Point d'entrée du programme."""
+    print("Bienvenue!")
 
-if
-__name__ == "__main__":
-main()
+if __name__ == "__main__":
+    main()
 
 
 Instructions
@@ -69,26 +66,28 @@ Instructions
 5 Second commit : "Ajout fonction saluer"
 6 Vérifier avec git log --oneline
 
-def
-saluer(nom: str) -> str:
-# Retourne un message de salutation
-return f"Bonjour, {nom} !"
+def saluer(nom: str) -> str:
+    # Retourne un message de salutation
+    return f"Bonjour, {nom} !"
 
-def
-main():
-print("Bienvenue!")
-print(saluer("Utilisateur"))
+def main():
+    print("Bienvenue!")
+    print(saluer("Utilisateur"))
 
 
 ✅ Créer et Naviguer
 
-$ git branch - Lister les branches
+$ git branch
+Lister les branches
 
-$ git branch feature-api - Créer une branche
+$ git branch feature-api
+Créer une branche
 
-$ git checkout feature-api - Basculer sur la branche
+$ git checkout feature-api
+Basculer sur la branche
 
-$ git checkout -b feature-api - Créer ET basculer (raccourci)
+$ git checkout -b feature-api
+Créer ET basculer (raccourci)
 
 
 ✅ Fusionner et Supprimer
@@ -124,8 +123,8 @@ HEAD = version actuelle | Autre = version à merger
 2 Choisir ou combiner les versions
 3 Supprimer les marqueurs <<<<
 4 Sauvegarder et valider
-$ git add config.py
-$ git commit -m "fix: résout conflit DB"
+    $ git add config.py
+    $ git commit -m "fix: résout conflit DB"
 
 
 Instructions
@@ -140,20 +139,18 @@ Instructions
 Bonus : Créez un conflit volontaire et résolvez-le !
 
 utils.py
-def
-valider_email(email: str) -> bool:
-"""Vérifie format email."""
-return "@" in email
 
-def
-formater_tel(num: str) -> str:
-"""Formate un téléphone."""
-chiffres = "".join(c for c in num if c.isdigit())
-return f"{chiffres[:2]} {chiffres[2:4]}..."
+def valider_email(email: str) -> bool:
+    """Vérifie format email."""
+    return "@" in email
+
+def formater_tel(num: str) -> str:
+    """Formate un téléphone."""
+    chiffres = "".join(c for c in num if c.isdigit())
+    return f"{chiffres[:2]} {chiffres[2:4]}..."
 
 
-🌊 Git Flow
-Stratégie complète avec rôles précis :
+🌊 Git Flow Stratégie complète avec rôles précis :
 
 ● main : Code en production
 ● develop : Intégration des features
@@ -163,8 +160,7 @@ Stratégie complète avec rôles précis :
 
 Projets complexes
 
-🚀 GitHub Flow
-Approche simplifiée et moderne :
+🚀 GitHub Flow Approche simplifiée et moderne :
 
 1 main toujours déployable
 2 Créer une branche par feature
