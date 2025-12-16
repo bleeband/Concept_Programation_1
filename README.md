@@ -12,7 +12,7 @@
 </pre>
 </p>
 
-<p align="center">
-Réalisé par **Marc-André Dufour**  <br>
+<p align="left">
+Réalisé par Marc-André Dufour  <br>
 © 2025 — Fait avec du café, du code et un peu de rage contrôlée
 </p>
