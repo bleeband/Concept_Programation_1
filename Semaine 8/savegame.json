@@ -1,0 +1,186 @@
+{
+  "tour": 7,
+  "animaux": [
+    {
+      "type": "Chien",
+      "nom": "Fido",
+      "age": 7,
+      "sexe": "M",
+      "espece": "chien",
+      "position": [
+        0,
+        1
+      ],
+      "sante": 90.25,
+      "energie": 93,
+      "bonheur": 48,
+      "territoire": [],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [],
+      "ennemis": [],
+      "race": "Golden Retrieve"
+    },
+    {
+      "type": "Chien",
+      "nom": "Roa",
+      "age": 6,
+      "sexe": "F",
+      "espece": "chien",
+      "position": [
+        3,
+        5
+      ],
+      "sante": 95.0,
+      "energie": 93,
+      "bonheur": 48,
+      "territoire": [],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [],
+      "ennemis": [],
+      "race": "Rottweiler"
+    },
+    {
+      "type": "Chien",
+      "nom": "Miquette",
+      "age": 15,
+      "sexe": "F",
+      "espece": "chien",
+      "position": [
+        5,
+        8
+      ],
+      "sante": 93.0,
+      "energie": 86,
+      "bonheur": 48,
+      "territoire": [],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [],
+      "ennemis": [],
+      "race": "Caniche"
+    },
+    {
+      "type": "Chat",
+      "nom": "Bob",
+      "age": 4,
+      "sexe": "M",
+      "espece": "chat",
+      "position": [
+        1,
+        0
+      ],
+      "sante": 90.25,
+      "energie": 91,
+      "bonheur": 48,
+      "territoire": [],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [
+        "Jack"
+      ],
+      "ennemis": [],
+      "couleur": "orange"
+    },
+    {
+      "type": "Chat",
+      "nom": "Fleur",
+      "age": 6,
+      "sexe": "F",
+      "espece": "chat",
+      "position": [
+        8,
+        5
+      ],
+      "sante": 90.25,
+      "energie": 91,
+      "bonheur": 48,
+      "territoire": [
+        [
+          8,
+          5
+        ]
+      ],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [],
+      "ennemis": [
+        "Jack"
+      ],
+      "couleur": "noir"
+    },
+    {
+      "type": "Chat",
+      "nom": "Jack",
+      "age": 8,
+      "sexe": "M",
+      "espece": "chat",
+      "position": [
+        1,
+        1
+      ],
+      "sante": 90.25,
+      "energie": 91,
+      "bonheur": 48,
+      "territoire": [],
+      "vitesse": 5,
+      "niveau": 1,
+      "experience": 0,
+      "points_competence": 0,
+      "competences": {
+        "chasse": 0,
+        "defense": 0,
+        "intelligence": 0
+      },
+      "est_vivant": true,
+      "amis": [
+        "Bob"
+      ],
+      "ennemis": [
+        "Fleur"
+      ],
+      "couleur": "blanc"
+    }
+  ]
+}
