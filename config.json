@@ -1,0 +1,34 @@
+{
+  "application": {
+    "nom": "MonApp",
+    "version": "1.0",
+    "debug": false
+  },
+  "utilisateurs": [
+    {
+      "id": 40515,
+      "nom": "Alice",
+      "date_creation": "2024-01-15"
+    },
+    {
+      "id": 72652,
+      "nom": "Bob",
+      "date_creation": "2024-01-15"
+    },
+    {
+      "id": 30317,
+      "nom": "Alice",
+      "date_creation": "2024-01-15"
+    },
+    {
+      "id": 70303,
+      "nom": "Bob",
+      "date_creation": "2024-01-15"
+    }
+  ],
+  "parametres": {
+    "theme": "clair",
+    "langue": "en",
+    "notifications": true
+  }
+}
