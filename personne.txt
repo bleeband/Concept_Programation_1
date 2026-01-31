@@ -1,5 +1,0 @@
-Alice : 25 ans
-pierre : 32 ans
-fred : 25 ans
-albert : 28 ans
-boris : 31 ans

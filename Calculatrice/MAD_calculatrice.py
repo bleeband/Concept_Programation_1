@@ -1,5 +1,3 @@
-
-
 # Objectif : Créer une calculatrice simple en Python avec une gestion robuste des erreurs à l'aide des exceptions.
 
 # Énoncé de l'exercice
@@ -14,11 +12,10 @@
 # Gérer proprement les erreurs à l'aide d'exceptions        OK
 # Spécifications détaillées :
     # Opérations disponibles :
-
-    # Addition (+)      OK
-    # Soustraction (-)      OK
-    # Multiplication (*)     OK
-    # Division (/)      OK
+        # Addition (+)      OK
+        # Soustraction (-)      OK
+        # Multiplication (*)     OK
+        # Division (/)      OK
 
 # Gestion des exceptions :
 
@@ -31,24 +28,29 @@
     # La calculatrice continue de fonctionner jusqu'à ce que l'utilisateur décide de quitter
     # Après chaque calcul, proposer à l'utilisateur de continuer ou de quitter
 
-# Structure suggérée:  voici un squelette de code pour aider vos étudiants à démarrer :
+# --------------------------------------------------------------------------------------------------
+under = "\033[4m"
+red = "\033[31m"
+end = "\033[0m"
+question = "\033[30m"
+rep = "\033[36m"
 
 def calculatrice():
     
-    print("\n=== CALCULATRICE SIMPLE ===")
+    print(f"\n=== {under}CALCULATRICE SIMPLE{end} ===")
 
     while True:
-            print("\nOpérations disponibles :")
-            print("1. Addition (+)")
-            print("2. Soustraction (-)")
-            print("3. Multiplication (*)")
-            print("4. Division (/)")
-            print("5. Modulo (%)")
-            print("6. Puissance (**)")            
-            print("Q. Quitter")
+            print(f"\n{under}Opérations disponibles{end} :\n")
+            print("     1. Addition (+)")
+            print("     2. Soustraction (-)")
+            print("     3. Multiplication (*)")
+            print("     4. Division (/)")
+            print("     5. Modulo (%)")
+            print("     6. Puissance (**)")            
+            print("     Q. Quitter")
 
             try:
-                choix_menu = input("Veuillez faire votre choix : ").lower()
+                choix_menu = input("\nVeuillez faire votre choix : ").lower()
 
                 if choix_menu == "q":
                     print("Merci ! Au revoir !")
@@ -57,14 +59,16 @@ def calculatrice():
                 choix_menu = int(choix_menu)
 
                 if choix_menu not in [1, 2, 3, 4, 5, 6]:
-                    raise ValueError("Veuillez faire un choix parmi le menu")
+                    raise ValueError(f"{red}Veuillez faire un choix parmi le menu{end}")
                 
                 try:
                     nbr_un = float(input("Entrez votre premier nombre : "))
                     nbr_deux = float(input("Entrez votre deuxième nombre : "))
                 except ValueError:
-                    raise ValueError("Veuillez entrer un nombre valide")
-
+                    raise ValueError(f"{red}Veuillez entrer un nombre valide{end}")
+                
+                operateur = str ; resultat = int
+                
                 if choix_menu == 1:
                     resultat = nbr_un + nbr_deux
                     operateur = "+"
@@ -79,8 +83,8 @@ def calculatrice():
 
                 elif choix_menu == 4:
                     if nbr_deux == 0:
-                        raise ZeroDivisionError("Attention : division par zéro interdite")
-                    resultat = nbr_un / nbr_deux  # peut lever ZeroDivisionError
+                        raise ZeroDivisionError("{red}Attention : division par zéro interdite{end}")
+                    resultat = nbr_un / nbr_deux
                     operateur = "/"
 
                 elif choix_menu == 5:
@@ -91,80 +95,40 @@ def calculatrice():
                     resultat = nbr_un ** nbr_deux
                     operateur = "**"
 
-                print(f"Résultat : {nbr_un} {operateur} {nbr_deux} = {resultat}")
+                print(f"Résultat : {int(nbr_un)} {operateur} {int(nbr_deux)} = {resultat:.2f}")
 
             except ValueError as ve:
-                print(f"Erreur : {ve}")
+                print(f"{red}Erreur : {ve}{end}")
 
             except ZeroDivisionError as zde:
-                print(f"Erreur : {zde}")
+                print(f"{red}Erreur : {zde}{end}")
 
             except Exception as e:
-                print(f"Erreur inattendue : {e}")
+                print(f"{red}Erreur inattendue : {e}{end}")
 
-            continuer = input("\nOn continu ? (o/n) : ").lower()
+            continuer = input("\nVoulez-vous continuer ? \033[1m(o/n){end} : ").lower()
             if continuer != "o":
-                print("Merci ! Au revoir !")
+                print("\nMerci ! Au revoir !\n")
                 break
 
 calculatrice()
 
+print(
+"""
+\033[30mQuelle exception est levée lorsque vous essayez de convertir en nombre une chaîne qui ne contient pas de nombre valide ?{end}
+    
+    \033[36m- int() -> ValueError{end}
 
-# calculatrice()
-# Questions pour vous guider
-# Quelle exception est levée lorsque vous essayez de convertir en nombre une chaîne qui ne contient pas de nombre valide ?
-    # int() -> ValueError
+\033[30mQuelle exception est levée lorsque vous essayez de diviser par zéro ?{end}
+    
+    \033[36m- ZeroDivisionError{end}
 
-# Quelle exception est levée lorsque vous essayez de diviser par zéro ?
-    # ZeroDivisionError
+\033[30mComment pouvez-vous gérer plusieurs types d'exceptions dans un même bloc try ?{end}
+    
+    \033[36m- en creant des except{end}
 
-# Comment pouvez-vous gérer plusieurs types d'exceptions dans un même bloc try?
-    # en creant des except
-
-# Quelle est la différence entre except ValueError et except Exception ?
-    # except ValueError : capture uniquement les erreurs de conversion ou de valeur incorrecte (par exemple "abc" → int).
-    # except Exception : capture toutes les erreurs héritées de Exception, donc beaucoup plus général.
-
-# Exemple d'exécution attendue
-# === CALCULATRICE SIMPLE ===
-
-# Opérations disponibles :
-# 1. Addition (+)
-# 2. Soustraction (-)
-# 3. Multiplication (*)
-# 4. Division (/)
-# 5. Quitter
-# Votre choix (1-5) : 1
-# Entrez le premier nombre : 10
-# Entrez le deuxième nombre : 5
-# Résultat : 10 + 5 = 15
-
-# Opérations disponibles :
-# 1. Addition (+)
-# 2. Soustraction (-)
-# 3. Multiplication (*)
-# 4. Division (/)
-# 5. Quitter
-# Votre choix (1-5) : 4
-# Entrez le premier nombre : 10
-# Entrez le deuxième nombre : 0
-# Erreur : Division par zéro impossible!
-
-# Opérations disponibles :
-# 1. Addition (+)
-# 2. Soustraction (-)
-# 3. Multiplication (*)
-# 4. Division (/)
-# 5. Quitter
-# Votre choix (1-5) : 6
-# Erreur : Choix invalide. Veuillez entrer un nombre entre 1 et 5.
-
-# Opérations disponibles :
-# 1. Addition (+)
-# 2. Soustraction (-)
-# 3. Multiplication (*)
-# 4. Division (/)
-# 5. Quitter
-# Votre choix (1-5) : 2
-# Entrez le premier nombre : abc
-# Erreur : Veuillez entrer un nombre valide.
+\033[30mQuelle est la différence entre except ValueError et except Exception ?{end}
+    
+    \033[36m- except ValueError : capture uniquement les erreurs de conversion ou de valeur incorrecte (par exemple "abc" → int).{end}
+    
+    \033[36m- except Exception : capture toutes les erreurs héritées de Exception, donc beaucoup plus général.{end} """)
