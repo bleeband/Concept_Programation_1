@@ -10,15 +10,15 @@ Créer un programme qui génère une matrice aléatoire et trouve la longueur du
 
 Le programme doit demander à l'utilisateur :
 
-- Le nombre de lignes de la matrice (entier positif)
-- Le nombre de colonnes de la matrice (entier positif)
-- La valeur maximale pour les nombres aléatoires (entier positif ≥ 1)
+OK - Le nombre de lignes de la matrice (entier positif)
+OK - Le nombre de colonnes de la matrice (entier positif)
+OK - La valeur maximale pour les nombres aléatoires (entier positif ≥ 1)
 
 ### 2. Génération de la matrice
 
-- Générer une matrice de dimensions (lignes × colonnes)
-- Remplir chaque cellule avec un entier aléatoire entre 1 et la valeur maximale saisie
-- Afficher la matrice générée de manière claire
+OK - Générer une matrice de dimensions (lignes × colonnes)
+OK - Remplir chaque cellule avec un entier aléatoire entre 1 et la valeur maximale saisie
+OK - Afficher la matrice générée de manière claire
 
 ### 3. Règles du chemin
 
@@ -73,9 +73,9 @@ Longueur : **1** (on reste sur place)
 
 Vous devez gérer les exceptions suivantes :
 
-1. **ValueError** : Lorsque l'utilisateur n'entre pas un nombre entier
-2. **Valeurs négatives ou nulles** : Pour les dimensions et la valeur maximale
-3. **Dimensions trop grandes** : Proposer une limite raisonnable (ex: 7×7 maximum)
+OK - 1. **ValueError** : Lorsque l'utilisateur n'entre pas un nombre entier
+OK - 2. **Valeurs négatives ou nulles** : Pour les dimensions et la valeur maximale
+OK - 3. **Dimensions trop grandes** : Proposer une limite raisonnable (ex: 7×7 maximum)
 4. **Toute autre erreur inattendue** avec un message clair
 
 ### 5. Fonctionnalités attendues
