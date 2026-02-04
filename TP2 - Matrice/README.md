@@ -6,27 +6,25 @@ Créer un programme qui génère une matrice aléatoire et trouve la longueur du
 
 ## Spécifications
 
-### 1. Saisie utilisateur
-
 Le programme doit demander à l'utilisateur :
 
-- Le nombre de lignes de la matrice (entier positif)
-- Le nombre de colonnes de la matrice (entier positif)
-- La valeur maximale pour les nombres aléatoires (entier positif ≥ 1)
+    ✅ Le nombre de lignes de la matrice (entier positif)
+    ✅ Le nombre de colonnes de la matrice (entier positif)
+    ✅ La valeur maximale pour les nombres aléatoires (entier positif ≥ 1)
 
 ### 2. Génération de la matrice
 
-- Générer une matrice de dimensions (lignes × colonnes)
-- Remplir chaque cellule avec un entier aléatoire entre 1 et la valeur maximale saisie
-- Afficher la matrice générée de manière claire
+    ✅ Générer une matrice de dimensions (lignes × colonnes)
+    ✅ Remplir chaque cellule avec un entier aléatoire entre 1 et la valeur maximale saisie
+    ✅ Afficher la matrice générée de manière claire
 
 ### 3. Règles du chemin
 
-- On peut partir de n'importe quelle cellule
-- On ne peut se déplacer que vers les 4 directions (haut, bas, gauche, droite)
-- On ne peut aller que vers une cellule dont la valeur est **strictement inférieure**
-- On ne peut pas sortir des limites de la matrice
-- Objectif : trouver la **longueur** (nombre de cellules) du chemin le plus long possible
+    - On peut partir de n'importe quelle cellule
+    - On ne peut se déplacer que vers les 4 directions (haut, bas, gauche, droite)
+    - On ne peut aller que vers une cellule dont la valeur est **strictement inférieure**
+    - On ne peut pas sortir des limites de la matrice
+    - Objectif : trouver la **longueur** (nombre de cellules) du chemin le plus long possible
 
 #### Exemples
 
@@ -73,17 +71,17 @@ Longueur : **1** (on reste sur place)
 
 Vous devez gérer les exceptions suivantes :
 
-1. **ValueError** : Lorsque l'utilisateur n'entre pas un nombre entier
-2. **Valeurs négatives ou nulles** : Pour les dimensions et la valeur maximale
-3. **Dimensions trop grandes** : Proposer une limite raisonnable (ex: 7×7 maximum)
-4. **Toute autre erreur inattendue** avec un message clair
+    ✅ **ValueError** : Lorsque l'utilisateur n'entre pas un nombre entier
+    ✅ **Valeurs négatives ou nulles** : Pour les dimensions et la valeur maximale
+    ✅ **Dimensions trop grandes** : Proposer une limite raisonnable (ex: 7×7 maximum)
+    ✅ **Toute autre erreur inattendue** avec un message clair
 
 ### 5. Fonctionnalités attendues
 
-- Saisie sécurisée avec re-saisie en cas d'erreur
-- Affichage clair de la matrice avec ses indices
-- Calcul et affichage de la longueur du chemin le plus long
-- Possibilité de relancer le programme sans le quitter
+    ✅ Saisie sécurisée avec re-saisie en cas d'erreur
+    ✅ Affichage clair de la matrice avec ses indices
+    - Calcul et affichage de la longueur du chemin le plus long
+    - Possibilité de relancer le programme sans le quitter
 
 ### 6. Exemples d'exécution
 
@@ -120,16 +118,16 @@ Entrez le nombre de lignes : 5
 
 ### 7. Contraintes techniques
 
-- N'utilisez aucune librairie externe (seulement `random` pour les nombres aléatoires)
-- Le code doit être bien structuré avec des fonctions
-- Les messages d'erreur doivent être explicites
-- Gestion propre de tous les cas d'erreur
+    - N'utilisez aucune librairie externe (seulement `random` pour les nombres aléatoires)
+    - Le code doit être bien structuré avec des fonctions
+    - Les messages d'erreur doivent être explicites
+    - Gestion propre de tous les cas d'erreur
 
 ### 8. Plus
 
-1. Afficher un exemple de chemin qui atteint la longueur maximale
-2. Proposer différentes stratégies de génération de matrice
-3. Afficher des statistiques sur la matrice (min, max, moyenne)
+    1. Afficher un exemple de chemin qui atteint la longueur maximale
+    2. Proposer différentes stratégies de génération de matrice
+    3. Afficher des statistiques sur la matrice (min, max, moyenne)
 
 Le travail est individuel.
 Soumettez votre travail via Teams.
