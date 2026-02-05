@@ -8,6 +8,8 @@ end = "\033[0m"
 
 max_size = 7
 max_val = 99
+#directions = ["haut", "bas", "gauche", "droite"] # ⬆️ ⬇️ ⬅️ ➡️
+directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 def user_input():
     while True:
@@ -44,11 +46,23 @@ def show_mat(matrice):
             print(f"{val:3}", end=" ")
         print()
 
+def deplacement(ligne, colonne, matrice, memoire):
+    if ligne < 0 or ligne >= len(matrice) or colonne < 0 or colonne >= len(matrice[0]) or (ligne, colonne) in memoire:
+        return
+    memoire.add((ligne, colonne))
+    print(f"\n Mémoire : {matrice[ligne][colonne]}")
+    
+    for depl_ligne, depl_colonne in directions:
+        deplacement(ligne + depl_ligne, colonne + depl_colonne, matrice, memoire)
+
+
 def executer():
-    pass
+    memoire = set()
+    nbr1, nbr2, nbr3 = user_input()
+    mat1 = mat_generator(nbr1, nbr2, nbr3)
+    show_mat(mat1)
+    print("\nCalculs en cours...\n")
+    deplacement(0, 0, mat1, memoire)
 
-
-# TEST
-nbr1, nbr2, nbr3 = user_input()
-mat1 = mat_generator(nbr1, nbr2, nbr3)
-show_mat(mat1)
+if __name__ == "__main__":
+    executer()
