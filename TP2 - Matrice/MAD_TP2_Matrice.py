@@ -1,4 +1,5 @@
 # TP2 - MATRICE - MARC-ANDRE DUFOUR - A REMETTRE POUR LE 16 FEVRIER 2026
+# https://github.com/bleeband/Concept_Programation_1/tree/main/TP2%20-%20Matrice
 
 import random
 
