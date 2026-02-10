@@ -101,7 +101,7 @@ def calcularice():
             resultat = 1
             for n in nombres:
                 resultat *= n
-            operateur = " × "
+            operateur = " x "
         elif operation == '/':
             resultat = nombres[0]
             for n in nombres[1:]:

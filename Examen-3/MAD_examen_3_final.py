@@ -169,17 +169,33 @@ def calculatrice():
         nbr_un, nbr_deux = nombres
 
         # Calcul selon le choix
-        if choix_menu == 1: resultat = nbr_un + nbr_deux; operateur = "+"
-        elif choix_menu == 2: resultat = nbr_un - nbr_deux; operateur = "-"
-        elif choix_menu == 3: resultat = nbr_un * nbr_deux; operateur = "*"
+        if choix_menu == 1:
+            resultat = nbr_un + nbr_deux
+            operateur = "+"
+        elif choix_menu == 2:
+            resultat = nbr_un - nbr_deux
+            operateur = "-"
+        elif choix_menu == 3:
+            resultat = nbr_un * nbr_deux
+            operateur = "*"
+
         elif choix_menu == 4:
             if nbr_deux == 0:
                 print(f"{red}Division par zéro interdite{end}")
                 continue
             resultat = nbr_un / nbr_deux
             operateur = "/"
-        elif choix_menu == 5: resultat = nbr_un % nbr_deux; operateur = "%"
-        elif choix_menu == 6: resultat = nbr_un ** nbr_deux; operateur = "**"
+
+        elif choix_menu == 5: 
+            if nbr_deux == 0:
+                print(f"{red}Modulo par zéro interdit{end}")
+                continue
+            resultat = nbr_un % nbr_deux
+            operateur = "%"
+
+        elif choix_menu == 6:
+            resultat = nbr_un ** nbr_deux
+            operateur = "**"
 
         print(f"Résultat : {format_nombre(nbr_un)} {operateur} {format_nombre(nbr_deux)} = {format_nombre(resultat)}")
         dernier_resultat = resultat
