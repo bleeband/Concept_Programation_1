@@ -2,6 +2,7 @@
 
 # vérifier si un joueur a gagné
 # vérifier s'il y a une égalité
+
 from tictactoe.board import valeur_nulle
 
 def check_win(board):

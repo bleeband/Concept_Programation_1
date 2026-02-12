@@ -1,3 +1,11 @@
+# Responsabilités :
+
+# créer la grille
+# afficher la grille
+# placer un symbole
+# vérifier victoire
+# vérifier égalité
+
 class Board:
     def __init__(self):
         self.valeur_nulle = " . "
