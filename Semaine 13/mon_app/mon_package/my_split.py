@@ -19,6 +19,3 @@ def my_split(string, char=" "):
 
     res.append("".join(current_string))
     return res
-
-def presentation():
-    print(f"Je suis {name} à votre service")

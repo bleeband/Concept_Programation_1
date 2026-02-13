@@ -10,3 +10,6 @@ venv/
 
 *.txt
 *.json
+*.log
+*.csv
+*.xlsx

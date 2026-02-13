@@ -11,7 +11,14 @@ def draw(board):
         print()
 
 def ask_position(joueur):
-    return input(f"{joueur} [1-9] ? > ")
+    while True:
+        try:
+            entree = int(input(f"{joueur} [1-9] ? > "))
+            return entree
+        
+        except ValueError:
+            print("Entre un nombre valide.")
+            
 
 def show_message(message):
     print(message)

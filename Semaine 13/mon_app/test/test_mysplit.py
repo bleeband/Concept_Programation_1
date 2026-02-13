@@ -1,5 +1,5 @@
 import unittest
-from mon_package.mon_module import my_split, MyCustomTypeError
+from mon_package.my_split import my_split, MyCustomTypeError
 
 class TestMonModule(unittest.TestCase):
 
